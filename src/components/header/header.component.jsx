@@ -12,6 +12,7 @@ import {ReactComponent as Logo} from '../../assets/crown.svg'
         <div className="options">
             <Link className="option" to="/shop">SHOP</Link>
             <Link className="option" to="/contacts">CONTACTS</Link>
+            <Link className="option" to="/auth">Authentication</Link>
         </div>
      </div>
  )
