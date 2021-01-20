@@ -7,7 +7,9 @@ import './header.styles.scss'
 import {ReactComponent as Logo} from '../../assets/crown.svg'
 
 
- const Header = props => (
+ const Header = props => {
+    console.log(props);
+ return (
      <div className="header">
         <Link to='/'>
             <Logo className="logo"/>
@@ -24,8 +26,8 @@ import {ReactComponent as Logo} from '../../assets/crown.svg'
         </div>
      </div>
      )
-  
- const mapStateToProps = state => ({
-     currentUser: state.user.currentUser
+    }
+ const mapStateToProps = ({user}) => ({
+     currentUser: user.currentUser
  })
  export default connect(mapStateToProps)(Header);
