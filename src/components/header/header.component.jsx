@@ -1,7 +1,9 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { auth } from '../../firebase/firebase.utils'
+import { selectCurrentUser } from '../../redux/user/user.selectors'
+import { SelectHidden } from '../../redux/cart/cart.selectors'
 import CartItem from '../cart-icon/cart-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
@@ -32,8 +34,8 @@ import {ReactComponent as Logo} from '../../assets/crown.svg'
      </div>
      )
     }
- const mapStateToProps = ({user :{currentUser}, cart : {hidden}} ) => ({
-     currentUser,
-     hidden
+ const mapStateToProps = ( state ) => ({
+     currentUser: selectCurrentUser(state),
+     hidden: SelectHidden(state)
  })
  export default connect(mapStateToProps)(Header);
