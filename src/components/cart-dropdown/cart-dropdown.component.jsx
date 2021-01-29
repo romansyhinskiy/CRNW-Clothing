@@ -5,16 +5,13 @@ import { selectCartItems } from '../../redux/cart/cart.selectors'
 import './cart-dropdown.styles.scss'
 import { withRouter } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
+import { toggleCartHidden } from '../../redux/cart/cart.actions'
 
 import CustomButton from '../custom-button/custom-button.component'
 
-const CartDropdown = ({cartItems}) => {
+const CartDropdown = ({cartItems, dispatch}) => {
 
     let history = useHistory();
-
-    function handleClick() {
-      history.push("/home");
-    }
 
     return (
         <div className="cart-dropdown">
@@ -28,7 +25,10 @@ const CartDropdown = ({cartItems}) => {
     
                
             </div>
-            <CustomButton onClick={handleClick}>GO TO CHECKOUT</CustomButton>
+            <CustomButton onClick={() => {
+                history.push("/checkout");
+                dispatch(toggleCartHidden())
+            }}>GO TO CHECKOUT</CustomButton>
         </div>
     )
     
