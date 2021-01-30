@@ -25,7 +25,6 @@ import {ReactComponent as Logo} from '../../assets/crown.svg'
             <div className="option" onClick={() => auth.signOut()}>Sign out</div> 
             : <Link className="option" to="/signin">Sign in</Link> 
             }
-            {currentUser ? <div>{currentUser.displayName} </div> : null}
             <CartItem />
         </div>
         {
