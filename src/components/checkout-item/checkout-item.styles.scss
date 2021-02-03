@@ -22,12 +22,17 @@
     width: 23%;
   }
 
-  .quantity {
-    padding-left: 20px;
-  }
-
   .remove-button {
     padding-left: 12px;
     cursor: pointer;
   }
+}
+.d-flex{
+  display: flex;
+}
+.arrow{
+  cursor: pointer;
+}
+.value{
+  padding: 0 10px
 }
